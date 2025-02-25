@@ -52,4 +52,4 @@ The project focuses on two primary user roles:
 
 ## Learn More
 
-[[Link to OpenVino Wiki (if available)]](https://openvino.atlassian.net/wiki/spaces/OPENVINO/pages/186712130/BioDigital+Certification.doc)
+[OpenVino Wiki](https://openvino.atlassian.net/wiki/spaces/OPENVINO/pages/186712130/BioDigital+Certification.doc)
