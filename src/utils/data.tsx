@@ -1,0 +1,231 @@
+import {
+	File,
+	Database,
+	ShieldCheck,
+	Cloud,
+	Image,
+	Thermometer,
+	FlaskConical,
+} from "lucide-react";
+
+interface Requirement {
+	requirement: string;
+	details: string;
+	tooltip: string;
+	evidence: string;
+	icon: JSX.Element;
+	url: string;
+}
+
+export const requirements: Record<
+	"Organic" | "Carbon Neutral" | "Vegan",
+	Requirement[]
+> = {
+	Organic: [
+		{
+			requirement: "Soil Management",
+			details: "Maintain soil organic matter and prevent erosion.",
+			tooltip: "Healthy soil prevents erosion and promotes biodiversity.",
+			evidence: "Link to worklog",
+			icon: <File className="w-4 h-4 text-pink-500" />,
+			url: "",
+		},
+		{
+			requirement: "Water Usage",
+			details: "Use sustainable irrigation practices.",
+			tooltip: "Water conservation ensures long-term sustainability.",
+			evidence: "Irrigation method and water source description with lat./lon.",
+			icon: <Cloud className="w-4 h-4 text-blue-500 " />,
+			url: "",
+		},
+		{
+			requirement: "Weed Control",
+			details: "Mechanical removal, crop rotation, or mulching.",
+			tooltip: "Non-chemical weed control maintains organic status.",
+			evidence:
+				"Weed management form (checkboxes: Crop rotation, Mulching, etc.)",
+			icon: <Database className="w-4 h-4 text-purple-500" />,
+			url: "",
+		},
+		{
+			requirement: "Fertilizers",
+			details: "Only organic fertilizers allowed.",
+			tooltip: "Synthetic fertilizers are not permitted.",
+			evidence: "Link to insumos",
+			icon: <ShieldCheck className="w-4 h-4 text-green-500" />,
+			url: "",
+		},
+		{
+			requirement: "Soil Sample",
+			details: "Provide the most recent soil sample analysis.",
+			tooltip: "Regular soil testing helps detect contamination.",
+			evidence: "Date, laboratory name, location of sample, depth results",
+			icon: <Thermometer className="w-4 h-4 text-orange-500" />,
+			url: "",
+		},
+		{
+			requirement: "Water Analysis",
+			details: "Provide independent laboratory analysis of water quality.",
+			tooltip: "Water quality is critical to organic certification.",
+			evidence: "Date, laboratory name, measured values",
+			icon: <Database className="w-4 h-4 text-purple-500" />,
+			url: "",
+		},
+		{
+			requirement: "Plant Images",
+			details: "Submit recent images of the vineyard's vines.",
+			tooltip: "Visual records track plant health over time.",
+			evidence: "IPFS image file or IPNS feed",
+			icon: <Image className="w-4 h-4 text-yellow-500" />,
+			url: "",
+		},
+		{
+			requirement: "Soil Moisture",
+			details: "Provide sensor data for soil moisture levels.",
+			tooltip: "Tracking moisture helps optimize irrigation.",
+			evidence: "Vinduino sensor ID and readings",
+			icon: <Thermometer className="w-4 h-4 text-orange-500" />,
+			url: "",
+		},
+		{
+			requirement: "Machinery",
+			details: "Describe the equipment used and how it is cleaned.",
+			tooltip: "Proper equipment cleaning avoids cross-contamination.",
+			evidence: "Form with machinery description and cleaning methods",
+			icon: <File className="w-4 h-4 text-pink-500" />,
+			url: "",
+		},
+		{
+			requirement: "Contamination Risks",
+			details: "Identify potential risks such as neighboring pesticide use.",
+			tooltip: "Mapping risks ensures compliance with organic standards.",
+			evidence: "Checklist (factories, fumigation, transgenic crops, etc.)",
+			icon: <ShieldCheck className="w-4 h-4 text-green-500" />,
+			url: "",
+		},
+		{
+			requirement: "Chemical Analysis",
+			details: "Provide chemical composition analysis of soil and water.",
+			tooltip: "Ensures compliance with organic regulations.",
+			evidence: "Laboratory report on chemical composition",
+			icon: <FlaskConical className="w-4 h-4 text-red-500" />,
+			url: "https://biodigital.openvino.org/chemical-analysis",
+		},
+	],
+
+	"Carbon Neutral": [
+		{
+			requirement: "Carbon Footprint Calculation",
+			details: "Submit a full carbon footprint analysis of the vineyard.",
+			tooltip:
+				"Tracking carbon emissions is key to achieving carbon neutrality.",
+			evidence: "Carbon footprint report uploaded to IPFS",
+			icon: <File className="w-4 h-4 text-pink-500" />,
+			url: "",
+		},
+		{
+			requirement: "Energy Consumption",
+			details: "Provide data on energy sources and usage.",
+			tooltip:
+				"Switching to renewable energy sources helps reduce carbon emissions.",
+			evidence: "Energy audit or electricity consumption report",
+			icon: <Cloud className="w-4 h-4 text-blue-500" />,
+			url: "",
+		},
+		{
+			requirement: "Offset Measures",
+			details:
+				"Detail any carbon offset initiatives (e.g., tree planting, renewable energy use).",
+			tooltip:
+				"Carbon offset projects balance emissions through reforestation or green energy.",
+			evidence: "Description of initiatives with supporting documents",
+			icon: <Database className="w-4 h-4 text-purple-500" />,
+			url: "",
+		},
+		{
+			requirement: "Transportation Impact",
+			details:
+				"Describe the emissions generated by logistics and distribution.",
+			tooltip:
+				"Logistics play a significant role in reducing carbon emissions.",
+			evidence: "CO₂ emissions calculation from transport logs",
+			icon: <ShieldCheck className="w-4 h-4 text-green-500" />,
+			url: "",
+		},
+		{
+			requirement: "Waste Management",
+			details:
+				"Detail how waste is reduced, reused, or recycled in production.",
+			tooltip:
+				"Sustainable waste management helps lower overall carbon footprint.",
+			evidence: "Waste management plan and recycling records",
+			icon: <File className="w-4 h-4 text-pink-500" />,
+			url: "",
+		},
+		{
+			requirement: "Chemical Analysis",
+			details: "Provide chemical composition analysis of soil and water.",
+			tooltip: "Ensures compliance with organic regulations.",
+			evidence: "Laboratory report on chemical composition",
+			icon: <FlaskConical className="w-4 h-4 text-red-500" />,
+			url: "https://biodigital.openvino.org/chemical-analysis",
+		},
+	],
+	Vegan: [
+		{
+			requirement: "Animal-Free Processing",
+			details:
+				"Certify that no animal-derived products are used in production.",
+			tooltip:
+				"Vegan wines exclude animal-derived fining agents like gelatin or casein.",
+			evidence: "Winery declaration and supplier attestations",
+			icon: <ShieldCheck className="w-4 h-4 text-green-500" />,
+			url: "",
+		},
+		{
+			requirement: "Fining Agents",
+			details: "List all fining agents used and confirm they are plant-based.",
+			tooltip:
+				"Vegan alternatives include pea protein, bentonite clay, and charcoal.",
+			evidence: "List of fining agents with verification documents",
+			icon: <File className="w-4 h-4 text-pink-500" />,
+			url: "",
+		},
+		{
+			requirement: "Cross-Contamination",
+			details:
+				"Describe how cross-contamination with animal products is prevented.",
+			tooltip:
+				"Strict protocols are required to prevent accidental contamination.",
+			evidence: "Production process description with control measures",
+			icon: <Cloud className="w-4 h-4 text-blue-500" />,
+			url: "",
+		},
+		{
+			requirement: "Supplier Certification",
+			details:
+				"Provide documentation from suppliers ensuring vegan compliance.",
+			tooltip: "All ingredients must be sourced from verified vegan suppliers.",
+			evidence: "Certificates from ingredient suppliers",
+			icon: <Database className="w-4 h-4 text-purple-500" />,
+			url: "",
+		},
+		{
+			requirement: "Packaging Materials",
+			details:
+				"Verify that all packaging materials do not contain animal-derived substances.",
+			tooltip: "Even adhesives and inks should be free of animal products.",
+			evidence: "Material analysis and supplier documentation",
+			icon: <ShieldCheck className="w-4 h-4 text-green-500" />,
+			url: "",
+		},
+		{
+			requirement: "Chemical Analysis",
+			details: "Provide chemical composition analysis of soil and water.",
+			tooltip: "Ensures compliance with organic regulations.",
+			evidence: "Laboratory report on chemical composition",
+			icon: <FlaskConical className="w-4 h-4 text-red-500" />,
+			url: "https://biodigital.openvino.org/chemical-analysis",
+		},
+	],
+};
